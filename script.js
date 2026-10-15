@@ -94,9 +94,17 @@
     pill.hidden = false;
   }
 
-  /* ---- Broken-image fallback: hide <img>, let the labeled placeholder show ---- */
+  /* ---- Broken-image fallback: hide <img>, show the labeled placeholder
+         on the [data-ph] frame ONLY when the photo actually failed ---- */
+  function markMissing(img) {
+    img.classList.add('is-missing');
+    var holder = img.closest('[data-ph]');
+    if (holder) holder.classList.add('ph-empty');
+  }
   $$('img').forEach(function (img) {
-    img.addEventListener('error', function () { img.classList.add('is-missing'); }, { once: true });
+    // the image may have failed before this script ran (cache / slow network)
+    if (img.complete && img.naturalWidth === 0) { markMissing(img); return; }
+    img.addEventListener('error', function () { markMissing(img); }, { once: true });
   });
 
   /* ---- Reveal on scroll (skipped under prefers-reduced-motion) ---- */
