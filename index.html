@@ -8,7 +8,13 @@
   <meta name="description" content="A traditional barbershop in [City], Idaho. Haircuts, skin fades, beard trims and hot-towel shaves. See recent cuts and book a chair — or call [PHONE].">
   <!-- [PLACEHOLDER: canonical — replace with your real domain -->
   <link rel="canonical" href="https://YOUR-USERNAME.github.io/YOUR-REPO/">
+
+  <!-- The site is light-only: stops browsers from auto-darkening UI and form controls -->
+  <meta name="color-scheme" content="light">
+  <!-- Browser chrome (status bar + toolbar) painted to match the paper background,
+       in BOTH light and dark system themes -->
   <meta name="theme-color" content="#F4EFE5">
+  <meta name="theme-color" content="#F4EFE5" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website">
@@ -468,4 +474,4 @@
 
   <script src="script.js"></script>
 </body>
-</html>
+      </html>
