@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- [REQ] viewport-fit=cover for notched phones -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>[Shop Name] — Barbershop in [City], Idaho | Haircuts, Fades &amp; Shaves</title>
+  <meta name="description" content="A traditional barbershop in [City], Idaho. Haircuts, skin fades, beard trims and hot-towel shaves. See recent cuts and book a chair — or call [PHONE].">
+  <!-- [PLACEHOLDER: canonical — replace with your real domain -->
+  <link rel="canonical" href="https://YOUR-USERNAME.github.io/YOUR-REPO/">
+  <meta name="theme-color" content="#F4EFE5">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="[Shop Name] — Barbershop in [City], Idaho">
+  <meta property="og:description" content="Haircuts, skin fades, beards and straight-razor edges in [City], Idaho. Book a chair online or call the shop.">
+  <meta property="og:image" content="images/hero.jpg">
+  <!-- [PLACEHOLDER: og:url — real domain -->
+  <meta property="og:url" content="https://YOUR-USERNAME.github.io/YOUR-REPO/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Inline SVG favicon: barber-pole stripes -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%231B1611'/%3E%3Crect%20x='6'%20y='6'%20width='52'%20height='52'%20rx='10'%20fill='%23F4EFE5'/%3E%3Cg%20stroke='%238C2B22'%20stroke-width='9'%3E%3Cpath%20d='M-6%2026%2026%20-6'/%3E%3Cpath%20d='M6%2058%2058%206'/%3E%3Cpath%20d='M38%2070%2070%2038'/%3E%3C/g%3E%3C/svg%3E">
+
+  <!-- Fonts: 2 families, swap, fallbacks, preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- LocalBusiness (BarberShop) schema. Facts only — everything unknown is a placeholder. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BarberShop",
+    "name": "[SHOP NAME]",
+    "description": "Traditional barbershop in [City], Idaho: haircuts, skin fades, beard trims and hot-towel shaves.",
+    "telephone": "[PHONE]",
+    "image": "images/hero.jpg",
+    "priceRange": "[PLACEHOLDER — e.g. $$]",
+    "url": "[PLACEHOLDER — site URL]",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "[STREET ADDRESS]",
+      "addressLocality": "[CITY]",
+      "addressRegion": "ID",
+      "postalCode": "[ZIP]",
+      "addressCountry": "US"
+    },
+    "sameAs": ["[PLACEHOLDER — Instagram URL]"],
+    "openingHours": "[PLACEHOLDER — e.g. Tu-Fr 09:00-17:00]"
+  }
+  </script>
+</head>
+
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-head">
+    <div class="wrap head-row">
+      <a class="brand" href="#top">
+        <span class="brand-name">[SHOP NAME]</span>
+        <span class="brand-sub">Barbershop · [City], Idaho</span>
+      </a>
+
+      <nav class="head-nav" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#about">The Shop</a>
+        <a href="#visit">Visit</a>
+        <a href="#book">Book</a>
+      </nav>
+
+      <div class="head-actions">
+        <!-- [PLACEHOLDER: phone — replace tel: and visible text, use E.164 like tel:+12085550123] -->
+        <a class="btn btn-ink btn-head" href="tel:[PHONE]" aria-label="Call the shop">Call</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="bars" aria-hidden="true"></span>
+          <span class="menu-txt">Menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Full-screen mobile menu -->
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile" hidden>
+    <a class="mm-link" href="#services"><span class="mm-no">01</span>Services</a>
+    <a class="mm-link" href="#work"><span class="mm-no">02</span>Work</a>
+    <a class="mm-link" href="#about"><span class="mm-no">03</span>The Shop</a>
+    <a class="mm-link" href="#visit"><span class="mm-no">04</span>Visit</a>
+    <a class="mm-link" href="#book"><span class="mm-no">05</span>Book a chair</a>
+    <!-- [PLACEHOLDER: phone] -->
+    <a class="btn btn-primary mm-call" href="tel:[PHONE]">Call the shop — [PHONE]</a>
+  </nav>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">Barbershop · [City], Idaho</p>
+          <h1>Traditional barbering in [City], Idaho.</h1>
+          <p class="lede">Haircuts, skin fades, beards and straight-razor edges — done the old way, with time and care.</p>
+
+          <!-- Live open/closed pill. Hidden while hours are placeholders; JS fills it once SHOP_HOURS is set. -->
+          <p id="openStatus" class="pill" hidden></p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#book">Book a chair</a>
+            <!-- [PLACEHOLDER: phone] -->
+            <a class="btn btn-ghost" href="tel:[PHONE]">Call [PHONE]</a>
+          </div>
+          <p class="hero-note">Prefer to talk it over? Call the shop and we’ll sort it out.</p>
+        </div>
+
+        <figure class="hero-photo frame" data-ph="Photo: the shop or a fresh cut — replace images/hero.jpg">
+          <!-- [PLACEHOLDER: hero photo, 4:5 crop, ~1440×1800]. Add srcset when real photos exist. -->
+          <img src="images/hero.jpg" width="720" height="900" fetchpriority="high"
+               alt="[PLACEHOLDER] Describe the hero photo, e.g. the barber chair at [Shop Name], [City], Idaho">
+          <!-- Rotating shop stamp -->
+          <svg class="stamp" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+            <circle cx="60" cy="60" r="58" fill="#8C2B22"/>
+            <circle cx="60" cy="60" r="47" fill="none" stroke="#F4EFE5" stroke-width="1.5" stroke-dasharray="2 3"/>
+            <defs>
+              <path id="stampArc" d="M60 60 m -38 0 a 38 38 0 1 1 76 0 a 38 38 0 1 1 -76 0"/>
+            </defs>
+            <g class="stamp-spin">
+              <text font-size="10" letter-spacing="2.2" fill="#F4EFE5" font-family="'Bebas Neue', 'Arial Narrow', sans-serif">
+                <textPath href="#stampArc">[SHOP NAME] · BARBERSHOP · [CITY], IDAHO ·&#160;</textPath>
+              </text>
+            </g>
+            <text x="60" y="68" text-anchor="middle" font-size="24" fill="#F4EFE5" font-family="'Bebas Neue', 'Arial Narrow', sans-serif">IDAHO</text>
+          </svg>
+        </figure>
+      </div>
+      <span class="rail" aria-hidden="true">Barbershop — [City], Idaho —</span>
+    </section>
+
+    <!-- Window-sign ticker (decorative) -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <div class="tgroup">
+          <span>Haircuts</span><i>✦</i><span>Skin fades</span><i>✦</i><span>Beard trims</span><i>✦</i>
+          <span>Hot towel shaves</span><i>✦</i><span>Kids’ cuts</span><i>✦</i><span>Line-ups</span><i>✦</i>
+          <span>[City], Idaho</span><i>✦</i>
+        </div>
+        <div class="tgroup">
+          <span>Haircuts</span><i>✦</i><span>Skin fades</span><i>✦</i><span>Beard trims</span><i>✦</i>
+          <span>Hot towel shaves</span><i>✦</i><span>Kids’ cuts</span><i>✦</i><span>Line-ups</span><i>✦</i>
+          <span>[City], Idaho</span><i>✦</i>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ SERVICES ============ -->
+    <section id="services" class="sec menu-sec">
+      <div class="wrap menu-grid">
+        <header class="menu-head" data-reveal>
+          <p class="kicker">No. 01 — The Menu</p>
+          <h2>What we do, and what it costs</h2>
+          <p class="sec-lede">Bring a photo if you’ve got one — it helps. Every cut leaves with a clean neckline.</p>
+          <!-- Owner-facing note; remove once prices are in -->
+          <p class="ph-note">Owner: swap the [PRICE] tags below for real numbers before launch.</p>
+        </header>
+
+        <ul class="menu" data-reveal>
+          <li>
+            <span class="m-name">Haircut</span><span class="dots" aria-hidden="true"></span>
+            <!-- [PLACEHOLDER: price] --><span class="m-price">[PRICE]</span>
+            <span class="m-desc">Clipper or shears, finished with a razor edge.</span>
+          </li>
+          <li>
+            <span class="m-name">Skin fade</span><span class="dots" aria-hidden="true"></span>
+            <span class="m-price">[PRICE]</span>
+            <span class="m-desc">Tight on the sides, blended high and clean.</span>
+          </li>
+          <li>
+            <span class="m-name">Beard trim</span><span class="dots" aria-hidden="true"></span>
+            <span class="m-price">[PRICE]</span>
+            <span class="m-desc">Shape and length, finished with a hot towel.</span>
+          </li>
+          <li>
+            <span class="m-name">Hot towel shave</span><span class="dots" aria-hidden="true"></span>
+            <span class="m-price">[PRICE]</span>
+            <span class="m-desc">Straight razor, hot lather, cold finish.</span>
+          </li>
+          <li>
+            <span class="m-name">Buzz + line-up</span><span class="dots" aria-hidden="true"></span>
+            <span class="m-price">[PRICE]</span>
+            <span class="m-desc">Quick, even, and sharp around the edges.</span>
+          </li>
+          <li>
+            <span class="m-name">Kids’ cut (under 12)</span><span class="dots" aria-hidden="true"></span>
+            <span class="m-price">[PRICE]</span>
+            <span class="m-desc">Patient chairs for first-timers. Lollipop included.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="pole" aria-hidden="true"></div>
+
+    <!-- ============ WORK / GALLERY ============ -->
+    <section id="work" class="sec">
+      <div class="wrap" data-reveal>
+        <p class="kicker">No. 02 — Off the chair</p>
+        <h2>Recent cuts</h2>
+        <p class="sec-lede">Real heads, real chairs. Photos come straight from the shop’s camera — [PLACEHOLDER: add real work photos].</p>
+      </div>
+
+      <div class="work-scroller" tabindex="0" aria-label="Gallery of recent haircuts" data-reveal>
+        <!-- [PLACEHOLDER: work photos, 4:5 crop, ~960×1200 each] -->
+        <figure class="work-card" data-ph="Photo: skin fade — images/work-1.jpg">
+          <img src="images/work-1.jpg" width="480" height="600" loading="lazy"
+               alt="[PLACEHOLDER] Skin fade haircut, side view — images/work-1.jpg">
+          <figcaption><span class="cap-no">01</span>Skin fade</figcaption>
+        </figure>
+        <figure class="work-card" data-ph="Photo: textured crop — images/work-2.jpg">
+          <img src="images/work-2.jpg" width="480" height="600" loading="lazy"
+               alt="[PLACEHOLDER] Textured crop haircut — images/work-2.jpg">
+          <figcaption><span class="cap-no">02</span>Textured crop</figcaption>
+        </figure>
+        <figure class="work-card" data-ph="Photo: beard sculpt — images/work-3.jpg">
+          <img src="images/work-3.jpg" width="480" height="600" loading="lazy"
+               alt="[PLACEHOLDER] Beard sculpt and lineup — images/work-3.jpg">
+          <figcaption><span class="cap-no">03</span>Beard sculpt</figcaption>
+        </figure>
+        <figure class="work-card" data-ph="Photo: classic side part — images/work-4.jpg">
+          <img src="images/work-4.jpg" width="480" height="600" loading="lazy"
+               alt="[PLACEHOLDER] Classic side part haircut — images/work-4.jpg">
+          <figcaption><span class="cap-no">04</span>Classic side part</figcaption>
+        </figure>
+        <figure class="work-card" data-ph="Photo: buzz and line-up — images/work-5.jpg">
+          <img src="images/work-5.jpg" width="480" height="600" loading="lazy"
+               alt="[PLACEHOLDER] Buzz cut with line-up — images/work-5.jpg">
+          <figcaption><span class="cap-no">05</span>Buzz + line-up</figcaption>
+        </figure>
+        <figure class="work-card" data-ph="Photo: scissor cut — images/work-6.jpg">
+          <img src="images/work-6.jpg" width="480" height="600" loading="lazy"
+               alt="[PLACEHOLDER] Scissor cut, longer on top — images/work-6.jpg">
+          <figcaption><span class="cap-no">06</span>Scissor cut</figcaption>
+        </figure>
+      </div>
+      <p class="swipe-hint">Swipe for more →</p>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="sec about-sec">
+      <div class="wrap about-grid">
+        <figure class="about-photo frame" data-ph="Photo: inside the shop — images/about.jpg" data-reveal>
+          <img src="images/about.jpg" width="640" height="800" loading="lazy"
+               alt="[PLACEHOLDER] Inside the shop — chairs, mirror, waiting bench — images/about.jpg">
+        </figure>
+
+        <div class="about-copy" data-reveal>
+          <p class="kicker">No. 03 — The shop</p>
+          <h2>A small shop with one rule: you leave looking right.</h2>
+          <!-- [PLACEHOLDER: replace with the shop's real story, in the owner's voice. Don't invent facts.] -->
+          <p class="story">[SHOP STORY] — write three or four lines here: who runs the shop, what it feels like when you walk in, and how folks around [City] find you. Keep it human; skip the buzzwords.</p>
+
+          <ul class="fact-list">
+            <li><span class="f-name">Chairs</span><span class="dots" aria-hidden="true"></span><span class="f-val">[NUMBER]</span></li>
+            <li><span class="f-name">Est.</span><span class="dots" aria-hidden="true"></span><span class="f-val">[YEAR]</span></li>
+            <li><span class="f-name">Parking</span><span class="dots" aria-hidden="true"></span><span class="f-val">[DETAIL]</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ REVIEWS (placeholder — never fabricate) ============ -->
+    <section id="reviews" class="sec reviews-sec">
+      <div class="wrap narrow" data-reveal>
+        <p class="kicker">No. 04 — Word of mouth</p>
+        <h2>Reviews</h2>
+        <div class="review-empty">
+          <p><strong>No reviews posted here yet.</strong></p>
+          <p>When real ones land on Google, we’ll pin a few here — written by real customers, word for word. If you’ve got a minute after your cut, we’d appreciate one.</p>
+          <!-- Owner-facing note; remove when reviews go in -->
+          <p class="ph-note">Owner: paste 3–4 real reviews in this block. Never make them up.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="pole" aria-hidden="true"></div>
+
+    <!-- ============ HOURS + LOCATION ============ -->
+    <section id="visit" class="sec visit-sec">
+      <div class="wrap">
+        <header data-reveal>
+          <p class="kicker">No. 05 — Find the chair</p>
+          <h2>Hours &amp; location</h2>
+        </header>
+
+        <div class="visit-grid">
+          <div data-reveal>
+            <!-- [PLACEHOLDER: full street address] -->
+            <address class="addr">
+              [SHOP NAME]<br>
+              [STREET ADDRESS]<br>
+              [CITY], Idaho [ZIP]
+            </address>
+            <p class="addr-line"><a href="tel:[PHONE]">[PHONE]</a></p>
+
+            <div class="visit-actions">
+              <!-- [PLACEHOLDER: directions URL — swap the query for the real address] -->
+              <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=[STREET+ADDRESS]+[CITY]+ID" target="_blank" rel="noopener">Get directions</a>
+              <a class="btn btn-ghost" href="tel:[PHONE]">Call the shop</a>
+            </div>
+
+            <!-- [PLACEHOLDER: replace each [HOURS] with real times, e.g. 9:00 AM – 5:00 PM.
+                 Mark closed days as "Closed". JS highlights today automatically. -->
+            <ul class="hours">
+              <li data-day="1"><span class="h-day">Monday</span><span class="h-t">[HOURS]</span></li>
+              <li data-day="2"><span class="h-day">Tuesday</span><span class="h-t">[HOURS]</span></li>
+              <li data-day="3"><span class="h-day">Wednesday</span><span class="h-t">[HOURS]</span></li>
+              <li data-day="4"><span class="h-day">Thursday</span><span class="h-t">[HOURS]</span></li>
+              <li data-day="5"><span class="h-day">Friday</span><span class="h-t">[HOURS]</span></li>
+              <li data-day="6"><span class="h-day">Saturday</span><span class="h-t">[HOURS]</span></li>
+              <li data-day="0"><span class="h-day">Sunday</span><span class="h-t">[HOURS]</span></li>
+            </ul>
+            <p class="ph-note">Owner: fill in the hours above, then set SHOP_HOURS in script.js to light up the “Open now” badge.</p>
+          </div>
+
+          <div class="map-col" data-reveal>
+            <div class="map">
+              <!-- [PLACEHOLDER: map query — replace with the real address. loading=lazy for perf.] -->
+              <iframe title="Map to [Shop Name], [Street Address], [City], Idaho"
+                      src="https://www.google.com/maps?q=[STREET+ADDRESS]+[CITY]+Idaho&amp;output=embed"
+                      loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                      allowfullscreen></iframe>
+            </div>
+            <p class="map-alt"><a href="https://www.google.com/maps/search/?api=1&amp;query=[STREET+ADDRESS]+[CITY]+ID" target="_blank" rel="noopener">Open in Google Maps</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BOOKING ============ -->
+    <section id="book" class="sec book-sec">
+      <div class="wrap book-grid">
+        <div class="book-copy" data-reveal>
+          <p class="kicker kicker-on-dark">No. 06 — Appointments</p>
+          <h2>Book a chair</h2>
+          <p class="sec-lede lede-on-dark">Tell us who, what, and roughly when — we’ll get back to you to confirm. If it’s sooner than the form can move, call and leave a message.</p>
+          <!-- [PLACEHOLDER: phone] -->
+          <p class="form-alt">Rather talk? <a href="tel:[PHONE]">Call [PHONE]</a>.</p>
+        </div>
+
+        <div data-reveal>
+          <!-- [PLACEHOLDER: Formspree — replace YOUR_FORM_ID at https://formspree.io/forms, keep /f/ format] -->
+          <form id="bookForm" class="book-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+            <input type="hidden" name="_subject" value="New booking request — website">
+            <!-- Honeypot: humans never see this -->
+            <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="f-name">Your name</label>
+                <input id="f-name" name="name" type="text" autocomplete="name" autocapitalize="words" required>
+              </div>
+              <div class="field">
+                <label for="f-phone">Phone</label>
+                <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(208) 555-0123" required>
+              </div>
+              <div class="field">
+                <label for="f-service">Service</label>
+                <select id="f-service" name="service" required>
+                  <option value="">Choose one…</option>
+                  <option>Haircut</option>
+                  <option>Skin fade</option>
+                  <option>Beard trim</option>
+                  <option>Hot towel shave</option>
+                  <option>Buzz + line-up</option>
+                  <option>Kids’ cut</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="f-date">Preferred day</label>
+                <input id="f-date" name="preferred-day" type="date">
+              </div>
+              <div class="field field-wide">
+                <label for="f-time">Time of day</label>
+                <select id="f-time" name="time-of-day">
+                  <option value="">Any time</option>
+                  <option>Morning</option>
+                  <option>Midday</option>
+                  <option>Afternoon</option>
+                  <option>Evening</option>
+                </select>
+              </div>
+              <div class="field field-wide">
+                <label for="f-notes">Anything we should know? <span class="opt">(optional)</span></label>
+                <textarea id="f-notes" name="notes" rows="4" placeholder="Reference photos, sensitive skin, a big event coming up…"></textarea>
+              </div>
+            </div>
+
+            <button class="btn btn-primary btn-block" type="submit">Send booking request</button>
+            <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="form-done" id="formDone" hidden tabindex="-1">
+            <h3>Request sent — thank you.</h3>
+            <!-- [PLACEHOLDER: phone] -->
+            <p>We’ll get back to you to confirm. Need it sooner? <a href="tel:[PHONE]">Call the shop</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-foot">
+    <div class="pole" aria-hidden="true"></div>
+    <div class="wrap foot-grid">
+      <div class="foot-brand">
+        <p class="foot-name">[SHOP NAME]</p>
+        <p class="foot-tag">Barbershop · [City], Idaho</p>
+      </div>
+      <div>
+        <p class="foot-h">Find us</p>
+        <address class="foot-addr">
+          [STREET ADDRESS]<br>[CITY], Idaho [ZIP]<br>
+          <a href="tel:[PHONE]">[PHONE]</a>
+        </address>
+      </div>
+      <div>
+        <p class="foot-h">Shortcuts</p>
+        <ul class="foot-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#work">Recent cuts</a></li>
+          <li><a href="#visit">Hours &amp; location</a></li>
+          <li><a href="#book">Book a chair</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="foot-h">Follow</p>
+        <ul class="foot-links">
+          <!-- [PLACEHOLDER: social URLs — delete the ones you don't use] -->
+          <li><a href="[INSTAGRAM URL]" rel="noopener">Instagram</a></li>
+          <li><a href="[FACEBOOK URL]" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap foot-bottom">
+      <p>© <span id="year"></span> [SHOP NAME] · [Street Address], [City], Idaho</p>
+    </div>
+  </footer>
+
+  <!-- ============ MOBILE ACTION BAR (hidden from 960px up) ============ -->
+  <nav class="dock" aria-label="Quick actions">
+    <a class="dock-btn dock-call" href="tel:[PHONE]">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call
+    </a>
+    <a class="dock-btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=[STREET+ADDRESS]+[CITY]+ID" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Directions
+    </a>
+    <a class="dock-btn dock-book" href="#book">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      Book
+    </a>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>
