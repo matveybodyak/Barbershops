@@ -508,6 +508,10 @@ html.lock { overflow: hidden; }
 .dock-call { background: var(--ink); color: var(--paper); }
 .dock-book { background: var(--accent); border-color: var(--accent); color: var(--paper); }
 
+/* While the mobile menu is open (script puts .lock on <html>), the dock would
+   sit on top of the menu's own call button — hide it, the menu has its own. */
+html.lock .dock { display: none; }
+
 /* ============ REVEAL ON SCROLL (JS adds .in) ============ */
 [data-reveal] { opacity: 0; transform: translateY(.9rem); transition: opacity .6s ease, transform .6s ease; }
 [data-reveal].in { opacity: 1; transform: none; }
