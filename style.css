@@ -593,4 +593,9 @@ html.lock { overflow: hidden; }
   .ticker-track { animation: none; }
   .stamp-spin { animation: none; }
   [data-reveal] { opacity: 1; transform: none; }
-                                              }
+}
+
+/* ============ LAST WORD ============
+   The hidden attribute must beat every component display rule above
+   (.pill, .book-form, …). Kept at the very end so source order wins the tie. */
+[hidden] { display: none; }
